@@ -6,7 +6,7 @@ import 'features/auth/screens/login_screen.dart';
 void main() {
   // API_BASE_URL is passed via --dart-define
   const apiBaseUrl = String.fromEnvironment('API_BASE_URL',
-      defaultValue: 'http://localhost:3000');
+      defaultValue: '/api');
 
   final apiClient = ApiClient(apiBaseUrl);
   final authService = AuthService(apiClient);
