@@ -37,4 +37,17 @@ jobs:
           context: .
           file: ./deploy/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/flutter-frontend:latest
+          tags: |
+            mukeshsaini7/flutter-frontend:latest
+            mukeshsaini7/flutter-frontend:${{ github.sha }}
+
+  trigger-deploy:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy repo
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT }}                 # PAT with access to deploy-repo
+          repository: mukeshsaini143/deploy-repo  # owner/repo
+          event-type: deploy
