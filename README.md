@@ -1,6 +1,6 @@
 # flutter_login_app
 
-A new Flutter project. project is working fine
+A new Flutter project. 
 
 ## Getting Started
 
