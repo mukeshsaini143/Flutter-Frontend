@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login',
+      title: 'Flutter Login 🚀 (Pipeline Test)',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: LoginScreen(authService: authService),
     );
